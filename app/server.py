@@ -9,10 +9,32 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.dropbox.com/s/6bgq8t6yextloqp/export.pkl?raw=1'
-export_file_name = 'export.pkl'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1yH4gadaaTybzUZmB7XFxY3NqYrGO9YK3'
+export_file_name = 'jordan_params.pkl'
 
-classes = ['black', 'grizzly', 'teddys']
+classes = ['jordan_1',
+  'jordan_10',
+  'jordan_11',
+  'jordan_12',
+  'jordan_13',
+  'jordan_14',
+  'jordan_15',
+  'jordan_16',
+  'jordan_17',
+  'jordan_18',
+  'jordan_19',
+  'jordan_2',
+  'jordan_20',
+  'jordan_21',
+  'jordan_22',
+  'jordan_23',
+  'jordan_3',
+  'jordan_4',
+  'jordan_5',
+  'jordan_6',
+  'jordan_7',
+  'jordan_8',
+  'jordan_9']
 path = Path(__file__).parent
 
 app = Starlette()
