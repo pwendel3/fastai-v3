@@ -12,29 +12,29 @@ from starlette.staticfiles import StaticFiles
 export_file_url = 'https://drive.google.com/uc?export=download&id=1yH4gadaaTybzUZmB7XFxY3NqYrGO9YK3'
 export_file_name = 'jordan_params.pkl'
 
-classes = ['jordan_1',
-  'jordan_10',
-  'jordan_11',
-  'jordan_12',
-  'jordan_13',
-  'jordan_14',
-  'jordan_15',
-  'jordan_16',
-  'jordan_17',
-  'jordan_18',
-  'jordan_19',
-  'jordan_2',
-  'jordan_20',
-  'jordan_21',
-  'jordan_22',
-  'jordan_23',
-  'jordan_3',
-  'jordan_4',
-  'jordan_5',
-  'jordan_6',
-  'jordan_7',
-  'jordan_8',
-  'jordan_9']
+classes = {'jordan_1':'I',
+  'jordan_1':'X',
+  'jordan_11':'XI',
+  'jordan_12':'XII',
+  'jordan_13':'XIII',
+  'jordan_14':'XIV',
+  'jordan_15':'XV',
+  'jordan_16':'XVI',
+  'jordan_17':'XVII',
+  'jordan_18':'XVIII',
+  'jordan_19':'XIX',
+  'jordan_2':'II',
+  'jordan_20':'XX',
+  'jordan_21':'XXI',
+  'jordan_22':'XXII',
+  'jordan_23':'XXIII',
+  'jordan_3':'III',
+  'jordan_4':'IV',
+  'jordan_5':'V',
+  'jordan_6':'VI',
+  'jordan_7':'VII',
+  'jordan_8':'VIII',
+  'jordan_9':'IX'}
 path = Path(__file__).parent
 
 app = Starlette()
@@ -54,6 +54,7 @@ async def download_file(url, dest):
 async def setup_learner():
     await download_file(export_file_url, path / export_file_name)
     try:
+        defaults.device == torch.device('cpu')
         learn = load_learner(path, export_file_name)
         return learn
     except RuntimeError as e:
@@ -83,7 +84,7 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
-    return JSONResponse({'result': str(prediction)})
+    return JSONResponse({'result': classes[str(prediction)]})
 
 
 if __name__ == '__main__':
