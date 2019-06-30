@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #F00B0F;
 }
 
 .no-display {
@@ -14,10 +14,11 @@ body {
 }
 
 .title {
-    font-size: 30px;
+    font-family: 'Luckiest Guy', cursive;
+	font-size: 50px;
     margin-top: 1em;
     margin-bottom: 1em;
-    color: #262626;
+    color: #ffffff;
 }
 
 .content {
@@ -43,20 +44,20 @@ button.choose-file-button {
     width: 200px;
     height: 40px;
     border-radius: 2px;
-    background-color: #ffffff;
-    border: solid 1px #7052CB;
+    background-color: #000000;
+    border: solid 1px #F00B0F;
     font-size: 13px;
-    color: #7052CB;
+    color: #ffffff;
 }
 
 button.analyze-button {
     width: 200px;
     height: 40px;
-    border: solid 1px #7052CB;
+    border: solid 1px #ffffff;
     border-radius: 2px;
-    background-color: #7052CB;
+    background-color: #ffffff;
     font-size: 13px;
-    color: #ffffff;
+    color: #F00B0F;
 }
 
 button:focus {
