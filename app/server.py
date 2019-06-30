@@ -10,7 +10,7 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
 export_file_url = 'https://drive.google.com/uc?export=download&id=1yH4gadaaTybzUZmB7XFxY3NqYrGO9YK3'
-export_file_name = 'jordan_params.pkl'
+export_file_name = 'jordan_params_2.pkl'
 
 classes = {'jordan_1':'I',
   'jordan_1':'X',
@@ -34,7 +34,8 @@ classes = {'jordan_1':'I',
   'jordan_6':'VI',
   'jordan_7':'VII',
   'jordan_8':'VIII',
-  'jordan_9':'IX'}
+  'jordan_9':'IX',
+  'jordan_not':'not J'}
 path = Path(__file__).parent
 
 app = Starlette()
